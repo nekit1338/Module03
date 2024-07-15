@@ -2,8 +2,15 @@ def send_email(message: str, recipient: str, *, sender="university.help@gmail.co
     recipient = recipient
     sender = sender
     tuple_ends_with = (".com", ".ru", ".net")
+    
+    """sample@gmail.com.split("@") -> ["sample", "gmail.com"] -> len == 2"""
+    """samplegmail.com.split("@") -> ["samplegmail.com"] -> len == 1"""
+
     if len(sender.split("@")) < 2 or len(recipient.split("@")) < 2:
         print(f"Невозможно отправить письмо с адреса {sender} на адрес {recipient}>")
+        
+        """Проверка на окончание email на /.com/.ru/.net"""
+
     elif not sender.endswith(tuple_ends_with) or not recipient.endswith(tuple_ends_with):
         print(f"Невозможно отправить письмо с адреса {sender} на адрес {recipient}>")
     elif sender == recipient:
