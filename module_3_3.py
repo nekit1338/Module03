@@ -15,7 +15,6 @@ print_params(c=[4, 5, 6])
 values_list = [5, "Abrakadabra", tuple()]
 values_dict = {"a": 5, "b": tuple(), "c": frozenset()}
 values_list_2 = [20, False]
-values_list_3 = [1, "string", False, True]
 print_params(*values_list)
 print_params(**values_dict)
 print_params(42, *values_list_2)
